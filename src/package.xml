@@ -2,10 +2,12 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>GroupDocsSample01Controller</members>
+        <members>GroupDocsSample02Controller</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>GroupDocsSample01</members>
+        <members>GroupDocsSample02</members>
         <name>ApexPage</name>
     </types>
     <version>27.0</version>
