@@ -3,6 +3,7 @@ public with sharing class GroupDocsSample02Controller {
     public String pkey { get; set; }
     public List<GD_FileSystemFolder> folders { get; set; }
     public List<GD_FileSystemDocument> files { get; set; }
+    public string error { get; set; }
 
     public PageReference runSample() {
         GD_GroupDocsSecurityHandler securityHandler = new GD_GroupDocsSecurityHandler(pkey);
@@ -14,21 +15,11 @@ public with sharing class GroupDocsSample02Controller {
             GD_ListEntitiesResult result = response.result;
             this.folders = result.folders;
             this.files = result.files;
+            this.error = null;
         }
-        
-        /*
-        GD_MgmtApi mgmt = new GD_MgmtApi(api);
-        GD_UserInfoResponse response = mgmt.GetUserProfile(cid);
-        string status = response.status;
-        if (status.containsIgnoreCase('ok')) {
-            GD_UserInfoResult result = response.result;
-            GD_UserInfo userInfo = result.user;
-            this.fname = userInfo.firstname;
-            this.lname = userInfo.lastname;
-            this.nickname = userinfo.nickname;
-            this.primaryemail = userInfo.primary_email;
+        else {
+            this.error = response.error_message;
         }
-        */
         return null;
     }
 }

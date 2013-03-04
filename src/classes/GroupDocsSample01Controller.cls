@@ -5,6 +5,7 @@ public with sharing class GroupDocsSample01Controller {
     public string lname { get; set; }
     public string nickname { get; set; }
     public string primaryemail { get; set; }
+    public string error { get; set; }
 
     public PageReference runSample() {
         GD_GroupDocsSecurityHandler securityHandler = new GD_GroupDocsSecurityHandler(pkey);
@@ -19,6 +20,10 @@ public with sharing class GroupDocsSample01Controller {
             this.lname = userInfo.lastname;
             this.nickname = userinfo.nickname;
             this.primaryemail = userInfo.primary_email;
+            this.error = null;
+        }
+        else {
+            this.error = response.error_message;
         }
         return null;
     }

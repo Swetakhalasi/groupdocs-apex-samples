@@ -72,5 +72,8 @@
                 </tr>
             </table>
         </apex:pageBlock>
+        <apex:pageBlock title="Result Error:">
+            <apex:outputText value="{!IF(error != null, error, 'No error')}"></apex:outputText>
+        </apex:pageBlock>
     </apex:form>
 </apex:page>

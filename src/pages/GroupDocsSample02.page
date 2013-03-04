@@ -37,7 +37,11 @@
             </div>
         </apex:pageBlock>
         <apex:pageBlock title="Sample result">
-            <table>
+            <table border="1" width="100%">
+                <tr>
+                    <td style="font-weight: bold;">File name:</td>
+                    <td style="font-weight: bold;">File guid:</td>
+                </tr>
                 <apex:repeat value="{!folders}" var="folder">
                     <tr>
                         <td>
@@ -59,6 +63,9 @@
                     </tr>
                 </apex:repeat>
             </table>
+        </apex:pageBlock>
+        <apex:pageBlock title="Result Error:">
+            <apex:outputText value="{!IF(error != null, error, 'No error')}"></apex:outputText>
         </apex:pageBlock>
     </apex:form>
 </apex:page>
