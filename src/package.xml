@@ -3,11 +3,15 @@
     <types>
         <members>GroupDocsSample01Controller</members>
         <members>GroupDocsSample02Controller</members>
+        <members>GroupDocsSample03Controller</members>
+        <members>GroupDocsSample04Controller</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>GroupDocsSample01</members>
         <members>GroupDocsSample02</members>
+        <members>GroupDocsSample03</members>
+        <members>GroupDocsSample04</members>
         <name>ApexPage</name>
     </types>
     <version>27.0</version>
