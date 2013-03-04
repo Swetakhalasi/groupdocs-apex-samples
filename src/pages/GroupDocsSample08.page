@@ -1,5 +1,5 @@
-<apex:page controller="GroupDocsSample04Controller">
-    <apex:form id="sample4form">
+<apex:page controller="GroupDocsSample08Controller">
+    <apex:form id="sample8form">
         <apex:pageBlock title="Requirements" rendered="true">
             <ol>
                 <li>Register <a href="http://www.groupdocs.com" target="_blank">GroupDocs</a> account.</li>
@@ -8,7 +8,7 @@
                 <li>Fill in the form below and click Run Sample (all fields are required)</li>
             </ol>
         </apex:pageBlock>
-        <apex:pageBlock title="Sample 4 - How to download a file from GroupDocs Storage using the Storage API" rendered="true">
+        <apex:pageBlock title="Sample 8 - How to return a URL representing a single page of a Document" rendered="true">
             See <a href="https://api.groupdocs.com/v2.0/spec/" target="_blank">Swagger docs</a> for full API documentation.
             <table>
                 <tr>
@@ -34,11 +34,11 @@
                 <tr>
                     <td style="padding-top: 5px;">
                         <b>
-                            File GUID: 
+                            Page number: 
                         </b>
                     </td>
                     <td>
-                        <apex:inputText value="{!guid}" required="true" size="100" />
+                        <apex:inputText value="{!page}" required="true" size="100" />
                     </td>
                 </tr>
             </table>
@@ -49,8 +49,11 @@
         <apex:pageBlock title="Sample result">
             <table>
                 <tr>
-                    <td rowspan="2">
-                        <apex:outputText value="Download link: {!link}"></apex:outputText>
+                    <td>
+                        Page URL:
+                    </td>
+                    <td>
+                        <apex:outputText value="{!url}"></apex:outputText>
                     </td>
                 </tr>
             </table>

@@ -5,6 +5,9 @@
         <members>GroupDocsSample02Controller</members>
         <members>GroupDocsSample03Controller</members>
         <members>GroupDocsSample04Controller</members>
+        <members>GroupDocsSample05Controller</members>
+        <members>GroupDocsSample07Controller</members>
+        <members>GroupDocsSample08Controller</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -12,6 +15,9 @@
         <members>GroupDocsSample02</members>
         <members>GroupDocsSample03</members>
         <members>GroupDocsSample04</members>
+        <members>GroupDocsSample05</members>
+        <members>GroupDocsSample07</members>
+        <members>GroupDocsSample08</members>
         <name>ApexPage</name>
     </types>
     <version>27.0</version>

@@ -1,5 +1,5 @@
-<apex:page controller="GroupDocsSample04Controller">
-    <apex:form id="sample4form">
+<apex:page controller="GroupDocsSample07Controller">
+    <apex:form id="sample7form">
         <apex:pageBlock title="Requirements" rendered="true">
             <ol>
                 <li>Register <a href="http://www.groupdocs.com" target="_blank">GroupDocs</a> account.</li>
@@ -8,7 +8,7 @@
                 <li>Fill in the form below and click Run Sample (all fields are required)</li>
             </ol>
         </apex:pageBlock>
-        <apex:pageBlock title="Sample 4 - How to download a file from GroupDocs Storage using the Storage API" rendered="true">
+        <apex:pageBlock title="Sample 5 - How to copy / move a file using the GroupDocs Storage API" rendered="true">
             See <a href="https://api.groupdocs.com/v2.0/spec/" target="_blank">Swagger docs</a> for full API documentation.
             <table>
                 <tr>
@@ -31,16 +31,6 @@
                         <apex:inputText value="{!pkey}" required="true" size="100" />
                     </td>
                 </tr>
-                <tr>
-                    <td style="padding-top: 5px;">
-                        <b>
-                            File GUID: 
-                        </b>
-                    </td>
-                    <td>
-                        <apex:inputText value="{!guid}" required="true" size="100" />
-                    </td>
-                </tr>
             </table>
             <div>
                 <apex:commandButton action="{!runSample}" value="Run Sample" />
@@ -48,11 +38,13 @@
         </apex:pageBlock>
         <apex:pageBlock title="Sample result">
             <table>
-                <tr>
-                    <td rowspan="2">
-                        <apex:outputText value="Download link: {!link}"></apex:outputText>
-                    </td>
-                </tr>
+            	<apex:repeat value="{!images}" var="image">
+	                <tr>
+	                    <td>
+	                        
+	                    </td>
+	                </tr>
+                </apex:repeat>
             </table>
         </apex:pageBlock>
         <apex:pageBlock title="Result Error:">
