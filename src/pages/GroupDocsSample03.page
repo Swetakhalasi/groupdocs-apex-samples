@@ -1,5 +1,5 @@
 <apex:page controller="GroupDocsSample03Controller">
-    <apex:form id="sample1form">
+    <apex:form id="sample3form">
         <apex:pageBlock title="Requirements" rendered="true">
             <ol>
                 <li>Register <a href="http://www.groupdocs.com" target="_blank">GroupDocs</a> account.</li>
