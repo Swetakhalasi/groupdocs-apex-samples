@@ -1,0 +1,186 @@
+<apex:page controller="GroupDocsSampleAssemblyController">
+    <apex:form id="mergeForm">
+        <apex:pageBlock title="Requirements">
+            <ol>
+                <li>
+                    Register <a href="http://www.groupdocs.com" target="_blank">GroupDocs</a> account.
+                </li>
+                <li>
+                    Get your <a href="http://groupdocs.com/docs/pages/viewpage.action?pageId=1409573" target="_blank">appCID and appKEY</a>.
+                </li>
+                <li>
+                    Fill in the form below and click Merge (all fields are required).
+                </li>
+            </ol>
+        </apex:pageBlock>
+        <apex:pageBlock title="GroupDocs Assembly Sample">
+            <div>See full REST API <a href="https://api.groupdocs.com/v2.0/spec/" target="_blank">documentation</a>.</div>
+            <table>
+                <tr>
+                    <td style="color: red; font-size: 13px; font-weight: bold;" colspan="2">
+                        <b>
+                            <apex:outputText value="{!errorMessage}"></apex:outputText>
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: green; font-size: 14px; font-weight: bold;" colspan="2">
+                        <b>
+                            <apex:outputText value="{!successMessage}"></apex:outputText>
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            <label for="appCID">App CID:</label>
+                        </b>
+                    </td>
+                    <td>
+                        <apex:inputText value="{!appCID}" id="appCID" size="75" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            <label for="appKEY">App Key:</label>
+                        </b>
+                    </td>
+                    <td>
+                        <apex:inputText value="{!appKEY}" id="appKEY" size="75" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            <label for="baseURL">Base URL:</label>
+                        </b>
+                    </td>
+                    <td>
+                        <apex:inputText value="{!baseURL}" id="baseURL" size="75" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            Save Format:
+                        </b>
+                    </td>
+                    <td>
+                        <apex:selectList value="{!saveFormat}" multiselect="false" size="1" style="width: 485px;">
+                            <apex:selectOptions value="{!formats}"></apex:selectOptions>
+                        </apex:selectList>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            Select object Type:
+                        </b>
+                    </td>
+                    <td>
+                        <apex:selectList value="{!selectedObjectType}" multiselect="false" size="10" style="width: 485px;">
+                            <apex:selectOptions value="{!typesOfObjets}"></apex:selectOptions>
+                        </apex:selectList>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            Select object:
+                        </b>
+                    </td>
+                    <td>
+                        <apex:selectList value="{!selectedObject}" multiselect="false" size="10" style="width: 380px;">
+                            <apex:selectOptions value="{!objects}"></apex:selectOptions>
+                        </apex:selectList>
+                        <apex:commandButton value="Load Objects" action="{!refreshObjects}" style="width: 100px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            Fields to use in template:
+                        </b>
+                    </td>
+                    <td>
+                        <textarea rows="3" style="width: 480px;"><apex:outputText value="{!objectFields}"></apex:outputText></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px; border-top: 1px solid black; border-left: 1px solid black;">
+                        <b>
+                            Upload Template:
+                        </b>
+                    </td>
+                    <td style="border-top: 1px solid black; border-right: 1px solid black;">
+                        <apex:inputFile fileName="{!uTemplateName}" value="{!uTemplateBody}" style="width: 380px;"></apex:inputFile>
+                        <apex:commandButton value="Upload" style="width: 100px;" action="{!uploadTemplate}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center" style="border-left: 1px solid black; border-right: 1px solid black;">
+                        <b>OR</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px; border-left: 1px solid black; border-bottom: 1px solid black;">
+                        <b>
+                            Select template:
+                        </b>
+                    </td>
+                    <td style="border-right: 1px solid black; border-bottom: 1px solid black;">
+                        <table>
+                            <tr>
+	                            <td rowspan="2">
+                                    <apex:selectList value="{!templateGuid}" multiselect="false" size="3" style="width: 380px;">
+                                        <apex:selectOptions value="{!templates}"></apex:selectOptions>
+                                    </apex:selectList>
+                                </td>
+                                <td>
+			                        <apex:commandButton value="Refresh" action="{!refresh}" style="width: 100px;" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+									<apex:commandButton value="Merge" action="{!runSample}" style="width: 100px;" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 15px;">
+                        <b>
+                            Job ID:
+                        </b>
+                    </td>
+                    <td style="padding-top: 10px;">
+                        <apex:inputText value="{!jobId}" style="width: 330px;"></apex:inputText>
+                        <apex:commandButton value="Get Document Link" action="{!getDocumentLink}" style="width: 150px"></apex:commandButton>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            Job status:
+                        </b>
+                    </td>
+                    <td>
+                        <apex:inputText value="{!jobStatus}" style="width: 480px;"></apex:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            Download link:
+                        </b>
+                    </td>
+                    <td>
+                        <textarea rows="4" style="width: 480px;"><apex:outputText value="{!downloadLink}"></apex:outputText></textarea>
+                    </td>
+                </tr>
+            </table>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

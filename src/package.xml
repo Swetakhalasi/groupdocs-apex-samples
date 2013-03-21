@@ -8,6 +8,7 @@
         <members>GroupDocsSample05Controller</members>
         <members>GroupDocsSample07Controller</members>
         <members>GroupDocsSample08Controller</members>
+        <members>GroupDocsSampleAssemblyController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -18,6 +19,7 @@
         <members>GroupDocsSample05</members>
         <members>GroupDocsSample07</members>
         <members>GroupDocsSample08</members>
+        <members>GroupDocsSampleAssembly</members>
         <name>ApexPage</name>
     </types>
     <version>27.0</version>
