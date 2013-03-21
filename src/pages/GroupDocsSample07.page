@@ -33,17 +33,17 @@
                 </tr>
             </table>
             <div>
-                <apex:commandButton action="{!runSample}" value="Run Sample" />
+                <apex:commandButton action="{!runSample}" value="Run Sample" /> <span style="color: red">(sample not implemented)</span>
             </div>
         </apex:pageBlock>
         <apex:pageBlock title="Sample result">
             <table>
-            	<apex:repeat value="{!images}" var="image">
-	                <tr>
-	                    <td>
-	                        
-	                    </td>
-	                </tr>
+                <apex:repeat value="{!images}" var="image">
+                    <tr>
+                        <td>
+                            
+                        </td>
+                    </tr>
                 </apex:repeat>
             </table>
         </apex:pageBlock>

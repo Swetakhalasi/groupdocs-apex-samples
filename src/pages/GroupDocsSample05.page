@@ -51,13 +51,23 @@
                         <apex:inputText value="{!destination}" required="true" size="100" />
                     </td>
                 </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            Move file (default - copy): 
+                        </b>
+                    </td>
+                    <td>
+                        <apex:inputCheckbox value="{!move}" />
+                    </td>
+                </tr>
             </table>
             <div>
                 <apex:commandButton action="{!runSample}" value="Run Sample" />
             </div>
         </apex:pageBlock>
         <apex:pageBlock title="Sample result">
-            <table>
+            <table border="1" width="100%">
                 <tr>
                     <td>
                         Source file
@@ -68,10 +78,26 @@
                 </tr>
                 <tr>
                     <td>
-                        <apex:outputText value="{!source}"></apex:outputText>
+                        <apex:outputText value="{!src.name}"></apex:outputText>
                     </td>
                     <td>
-                        <apex:outputText value="{!destination}"></apex:outputText>
+                        <apex:outputText value="{!dst.name}"></apex:outputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputText value="{!src.guid}"></apex:outputText>
+                    </td>
+                    <td>
+                        <apex:outputText value="{!dst.guid}"></apex:outputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputText value="{!src.file_type}"></apex:outputText>
+                    </td>
+                    <td>
+                        <apex:outputText value="{!dst.file_type}"></apex:outputText>
                     </td>
                 </tr>
             </table>

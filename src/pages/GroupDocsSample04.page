@@ -43,7 +43,7 @@
                 </tr>
             </table>
             <div>
-                <apex:commandButton action="{!runSample}" value="Run Sample" />
+                <apex:commandButton action="{!runSample}" value="Run Sample" /> <span style="color: red">(sample not work)</span>
             </div>
         </apex:pageBlock>
         <apex:pageBlock title="Sample result">

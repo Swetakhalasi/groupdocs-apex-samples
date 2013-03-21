@@ -9,6 +9,7 @@ public with sharing class GroupDocsSample04Controller {
         GD_GroupDocsSecurityHandler securityHandler = new GD_GroupDocsSecurityHandler(pkey);
         GD_ApiClient api = new GD_ApiClient(securityHandler);
         GD_StorageApi storageApi = new GD_StorageApi(api);
+        Blob data = storageApi.GetFile(cid, guid);
 /*
         string status = response.status;
         if (status.containsIgnoreCase('ok')) {
