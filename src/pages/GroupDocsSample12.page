@@ -1,0 +1,72 @@
+<apex:page controller="GroupDocsSample12Controller">
+    <apex:form id="sample12form">
+        <apex:pageBlock title="Requirements" rendered="true">
+            <ol>
+                <li>Register <a href="http://www.groupdocs.com" target="_blank">GroupDocs</a> account.</li>
+                <li>Fill your personal information in GroupDocs profile</li>
+                <li>Get your Client ID and Private Key (<a href="http://groupdocs.com/docs/pages/viewpage.action?pageId=1409573" target="_blank">How to Get Your GroupDocs API Keys?</a>)</li>
+                <li>Fill in the form below and click Run Sample (all fields are required)</li>
+            </ol>
+        </apex:pageBlock>
+        <apex:pageBlock title="Sample 12 - How to list all annotations from document" rendered="true">
+            See <a href="https://api.groupdocs.com/v2.0/spec/" target="_blank">Swagger docs</a> for full API documentation.
+            <table>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            Client ID: 
+                        </b>
+                    </td>
+                    <td>
+                        <apex:inputText value="{!cid}" required="true" size="100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            Private Key: 
+                        </b>
+                    </td>
+                    <td>
+                        <apex:inputText value="{!pkey}" required="true" size="100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 5px;">
+                        <b>
+                            File ID: 
+                        </b>
+                    </td>
+                    <td>
+                        <apex:inputText value="{!guid}" required="true" size="100" />
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <apex:commandButton action="{!runSample}" value="Run Sample" />
+            </div>
+        </apex:pageBlock>
+        <apex:pageBlock title="Sample result">
+            <apex:repeat value="{!result}" var="res">
+                <div>
+		            Access: <apex:outputText value="{!res.access}"></apex:outputText>
+                </div>
+                <div>
+		            Type: <apex:outputText value="{!res.m_type}"></apex:outputText>
+                </div>
+                <div>
+                    Replies
+		            <apex:repeat value="{!res.replies}" var="replie">
+                        <div>
+                            <apex:outputText value="{!replie.userName}"></apex:outputText>: 
+                            <apex:outputText value="{!replie.text}"></apex:outputText>
+                        </div>
+		            </apex:repeat>
+                </div>
+            </apex:repeat>
+        </apex:pageBlock>
+        <apex:pageBlock title="Result Error:">
+            <apex:outputText value="{!IF(error != null, error, 'No error')}"></apex:outputText>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
