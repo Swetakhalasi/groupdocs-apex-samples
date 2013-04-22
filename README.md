@@ -6,11 +6,14 @@ Samples how to use GroupDocs SDK for integration GroupDocs functional to SalesFo
 * Sample 1  - How to login to GroupDocs using the API
 * Sample 2  - How to list files within GroupDocs Storage using the Storage API
 * Sample 3  - How to upload a file to GroupDocs using the Storage API
+* Sample 4  - How to download a file from GroupDocs Storage using the Storage API
 * Sample 5  - How to copy / move a file using the GroupDocs Storage API
 * Sample 6  - How to add a Signature to a document in GroupDocs Signature
+* Sample 7  - How to use Document Api to list thumbnails for a document
 * Sample 8  - How to return a URL representing a single page of a Document
 * Sample 9  - How to generate an embedded Viewer URL for a Document
 * Sample 10 - How to share a document to other users
+* Sample 11 - How to programmatically create and post an annotation into document
 * Sample 12 - How to list all annotations from document
 * Sample 13 - How to add collaborator to doc with annotations
 * Sample 14 - How to check the list of shares for a folder

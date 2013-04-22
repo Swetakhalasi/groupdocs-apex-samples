@@ -43,14 +43,16 @@
                 </tr>
             </table>
             <div>
-                <apex:commandButton action="{!runSample}" value="Run Sample" /> <span style="color: red">(sample not work)</span>
+                <apex:commandButton action="{!runSample}" value="Run Sample" /> <span style="font-size: 10px;">(Please use *.doc file for test)</span>
             </div>
         </apex:pageBlock>
         <apex:pageBlock title="Sample result">
             <table>
                 <tr>
                     <td rowspan="2">
-                        <apex:outputText value="Download link: {!link}"></apex:outputText>
+                        <a href="data:application/msword;charset=UTF-8;base64,{!link}">
+                            <apex:outputText value="{!IF(link != null, 'Download link', '')}"></apex:outputText>
+                        </a>
                     </td>
                 </tr>
             </table>

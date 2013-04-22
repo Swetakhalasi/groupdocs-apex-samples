@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>GroupDocsSample01Controller</members>
+        <members>GroupDocsSample01ControllerTest</members>
+        <members>GroupDocsSample02Controller</members>
+        <members>GroupDocsSample03Controller</members>
+        <members>GroupDocsSample04Controller</members>
+        <members>GroupDocsSample05Controller</members>
         <members>GroupDocsSample06Controller</members>
+        <members>GroupDocsSample07Controller</members>
+        <members>GroupDocsSample08Controller</members>
+        <members>GroupDocsSample09Controller</members>
+        <members>GroupDocsSample10Controller</members>
+        <members>GroupDocsSample11Controller</members>
+        <members>GroupDocsSample12Controller</members>
+        <members>GroupDocsSample13Controller</members>
+        <members>GroupDocsSample14Controller</members>
+        <members>GroupDocsSample15Controller</members>
+        <members>GroupDocsSampleAssemblyController</members>
         <name>ApexClass</name>
     </types>
     <types>
+        <members>GroupDocsSample01</members>
+        <members>GroupDocsSample02</members>
+        <members>GroupDocsSample03</members>
+        <members>GroupDocsSample04</members>
+        <members>GroupDocsSample05</members>
         <members>GroupDocsSample06</members>
+        <members>GroupDocsSample07</members>
+        <members>GroupDocsSample08</members>
+        <members>GroupDocsSample09</members>
+        <members>GroupDocsSample10</members>
+        <members>GroupDocsSample11</members>
+        <members>GroupDocsSample12</members>
+        <members>GroupDocsSample13</members>
+        <members>GroupDocsSample14</members>
+        <members>GroupDocsSample15</members>
+        <members>GroupDocsSampleAssembly</members>
         <name>ApexPage</name>
     </types>
     <version>27.0</version>

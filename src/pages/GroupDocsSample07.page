@@ -8,7 +8,7 @@
                 <li>Fill in the form below and click Run Sample (all fields are required)</li>
             </ol>
         </apex:pageBlock>
-        <apex:pageBlock title="Sample 5 - How to copy / move a file using the GroupDocs Storage API" rendered="true">
+        <apex:pageBlock title="Sample 7 - This sample will show how to use Document Api to list thumbnails for a document using Apex SDK" rendered="true">
             See <a href="https://api.groupdocs.com/v2.0/spec/" target="_blank">Swagger docs</a> for full API documentation.
             <table>
                 <tr>
@@ -33,15 +33,16 @@
                 </tr>
             </table>
             <div>
-                <apex:commandButton action="{!runSample}" value="Run Sample" /> <span style="color: red">(sample not implemented)</span>
+                <apex:commandButton action="{!runSample}" value="Run Sample" />
             </div>
         </apex:pageBlock>
         <apex:pageBlock title="Sample result">
+            Thumbnails count - {!images.size}
             <table>
                 <apex:repeat value="{!images}" var="image">
                     <tr>
                         <td>
-                            
+                            <img src="data:image/jpg;base64,{!image}" width="40" height="40" /><br />
                         </td>
                     </tr>
                 </apex:repeat>
